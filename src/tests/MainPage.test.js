@@ -1,6 +1,5 @@
 import React from 'react';
 import { screen, fireEvent } from '@testing-library/react';
-// import fireEvent from '@testing-library/user-event';
 import renderWithRouter from './RenderWithRouter';
 import App from '../App';
 import axios from 'axios';

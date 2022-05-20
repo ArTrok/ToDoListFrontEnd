@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import './Task.css';
 
 
 const Task = ({ task: { id, date, time, title, details, status, createdAt }}) => {
@@ -71,8 +72,8 @@ const Task = ({ task: { id, date, time, title, details, status, createdAt }}) =>
             <p data-testid={ `taskDate${ id }` }>{date}</p>
             <p data-testid={ `taskTimestamp${ id }` }>{time}</p>
           </div>
-          <p data-testid={ `taskStatus${ id }` }>{status}</p>
-          <p data-testid={ `taskCreationDate${ id }` }>{createdAt}</p>
+          <p data-testid={ `taskStatus${ id }` } className={ status === "done" ? "blueTask" : "yellowTask" } >{status}</p>
+          <p data-testid={ `taskCreationDate${ id }` }>{Date(createdAt)}</p>
         </div>) : (
           <div>
             <input type="date" name="date" data-testid={ `taskDate${ id }` } aria-label={ `taskDate${ id }` } placeholder={ date } onChange={ handleDateChange } />
