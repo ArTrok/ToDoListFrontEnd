@@ -5,3 +5,10 @@
 .blueTask {
   background-color: #008BF8;
 }
+
+.taskMainDiv {
+  margin-block: 50px;
+  background-color: #30BCED;
+  padding-left: 10px;
+  padding-block: 5px;
+}

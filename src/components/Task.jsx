@@ -73,7 +73,7 @@ const Task = ({ task: { id, date, time, title, details, status, createdAt }}) =>
             <p data-testid={ `taskTimestamp${ id }` }>{time}</p>
           </div>
           <p data-testid={ `taskStatus${ id }` } className={ status === "done" ? "blueTask" : "yellowTask" } >{status}</p>
-          <p data-testid={ `taskCreationDate${ id }` }>{Date(createdAt)}</p>
+          <p data-testid={ `taskCreationDate${ id }` }>{createdAt}</p>
         </div>) : (
           <div>
             <input type="date" name="date" data-testid={ `taskDate${ id }` } aria-label={ `taskDate${ id }` } placeholder={ date } onChange={ handleDateChange } />
@@ -94,7 +94,7 @@ const Task = ({ task: { id, date, time, title, details, status, createdAt }}) =>
   }
 
   return (
-    <div>
+    <div className='taskMainDiv'>
       { whatToRender() }
       <button data-testid={`updateTask${id}`} onClick={ editTaskButton }>edit task</button>
       <button data-testid={`deleteTask${id}`} onClick={ deleteTaskButton }>delete task</button>

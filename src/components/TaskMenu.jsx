@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import TaskPanel from './TaskPanel';
+import './TaskMenu.css';
 
 const TaskMenu = () => {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -80,7 +81,7 @@ const TaskMenu = () => {
       </>
       }
       <p>{date} - {time} - {title} - {details} - Status: {status}</p>
-      {taskCreated && <p>task created</p>}
+      {taskCreated && <p className='taskCreatedPop'>task created</p>}
       <TaskPanel tasks={tasks} setTasks={setTasks} />
     </div>
   )
